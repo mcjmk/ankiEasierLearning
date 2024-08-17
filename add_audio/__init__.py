@@ -16,17 +16,13 @@ def testFunction() -> None:
         return
     note = card.note()
     name, value = note.items()[1]
-    note[name] = value + "[sound:SigmaRuleSong.mp3]"
+    note[name] = value + "[sound:name.mp3]"
     mw.col.update_note(note)
 
 
-# create a new menu item, "test"
-action_front = QAction("Add pronouncion front", mw)
-# set it to call testFunction when it's clicked
-qconnect(action_front.triggered, testFunction)
-# and add it to the tools menu
-mw.form.menuqt_accel_view.addAction(action_front)
-mw.form.centralwidget.addAction(action_front)
+action= QAction("Add pronouncion", mw)
+qconnect(action.triggered, testFunction)
+mw.form.menubar.addAction(action)
 
 
 
